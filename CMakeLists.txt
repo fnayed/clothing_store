@@ -10,4 +10,5 @@ add_executable(SyrbuOOP
         Pants.cpp
         Pants.h
         Footwear.cpp
-        Footwear.h)
+        Footwear.h
+        main.cpp)
