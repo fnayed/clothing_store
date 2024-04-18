@@ -11,11 +11,13 @@ class Footwear {
 private:
     string modelName;
     float price;
+    static int count; //  static поле
 public:
     void set_modelName(string modelName);
-    string get_modelName();
+    string get_modelName()const; //Використати модифікатор const
     void set_price(float price);
-    float get_price();
+    float get_price()const; //Використати модифікатор const
+    int get_the_number_of_class_objects() const; //Використати модифікатор const
 
     // Делегований конструктор (Оболочка) -->
     Footwear(string modelName, float price);
