@@ -15,9 +15,15 @@ private: // Приватний модифікатор доступу (Коли �
 
 public: // Публічний модифікатор доступу (Коли працюєш в main його поля доступні)
     void set_modelName(string modelName);
-    string get_modelName();
+    string get_modelName()const; //Використати модифікатор const
     void set_price(float price);
-    float get_price();
+    float get_price()const; //Використати модифікатор const
+
+
+    friend std::ostream& operator<<(std::ostream& os, const TShirt& obj); // Перевантажений дружній оператор <<
+    friend std::istream& operator>>(std::istream& is, TShirt& obj);// Перевантажений дружній оператор >>
+
+    TShirt(const TShirt& other); // Copy constructor (Оболочка)
 
     // Перегружений конструктор (Оболочка) -->
     TShirt();
