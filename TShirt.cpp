@@ -35,7 +35,9 @@ std::istream& operator>>(std::istream& is, TShirt& obj) {// Перевантаж
     return is;
 }
 
-TShirt::TShirt(const TShirt &other): modelName(other.modelName), price(other.price) {}// Copy constructor (Всередині)
+TShirt::TShirt(const TShirt &other): modelName(other.modelName), price(other.price) {// Copy constructor (Всередині)
+    cout<<"Called TShirt Copy constructor"<<endl;
+}
 
 // Перегружений конструктор (Всередині (тіпа логіка його) ) -->
 TShirt::TShirt(): modelName{"None"}, price{0} { // Списки ініціалізії конструкторів: modelName{"None"}, price{0}

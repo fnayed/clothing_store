@@ -73,6 +73,24 @@ build CMakeFiles/SyrbuOOP.dir/Footwear.cpp.obj: CXX_COMPILER__SyrbuOOP_unscanned
   OBJECT_DIR = CMakeFiles\SyrbuOOP.dir
   OBJECT_FILE_DIR = CMakeFiles\SyrbuOOP.dir
 
+build CMakeFiles/SyrbuOOP.dir/LongSleeveTShirt.cpp.obj: CXX_COMPILER__SyrbuOOP_unscanned_Debug C$:/Users/Endi/Desktop/SyrbuOOP/LongSleeveTShirt.cpp || cmake_object_order_depends_target_SyrbuOOP
+  DEP_FILE = CMakeFiles\SyrbuOOP.dir\LongSleeveTShirt.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\SyrbuOOP.dir
+  OBJECT_FILE_DIR = CMakeFiles\SyrbuOOP.dir
+
+build CMakeFiles/SyrbuOOP.dir/Sneackers.cpp.obj: CXX_COMPILER__SyrbuOOP_unscanned_Debug C$:/Users/Endi/Desktop/SyrbuOOP/Sneackers.cpp || cmake_object_order_depends_target_SyrbuOOP
+  DEP_FILE = CMakeFiles\SyrbuOOP.dir\Sneackers.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\SyrbuOOP.dir
+  OBJECT_FILE_DIR = CMakeFiles\SyrbuOOP.dir
+
+build CMakeFiles/SyrbuOOP.dir/Breedje.cpp.obj: CXX_COMPILER__SyrbuOOP_unscanned_Debug C$:/Users/Endi/Desktop/SyrbuOOP/Breedje.cpp || cmake_object_order_depends_target_SyrbuOOP
+  DEP_FILE = CMakeFiles\SyrbuOOP.dir\Breedje.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\SyrbuOOP.dir
+  OBJECT_FILE_DIR = CMakeFiles\SyrbuOOP.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SyrbuOOP
@@ -81,7 +99,7 @@ build CMakeFiles/SyrbuOOP.dir/Footwear.cpp.obj: CXX_COMPILER__SyrbuOOP_unscanned
 #############################################
 # Link the executable SyrbuOOP.exe
 
-build SyrbuOOP.exe: CXX_EXECUTABLE_LINKER__SyrbuOOP_Debug CMakeFiles/SyrbuOOP.dir/main.cpp.obj CMakeFiles/SyrbuOOP.dir/TShirt.cpp.obj CMakeFiles/SyrbuOOP.dir/Pants.cpp.obj CMakeFiles/SyrbuOOP.dir/Footwear.cpp.obj
+build SyrbuOOP.exe: CXX_EXECUTABLE_LINKER__SyrbuOOP_Debug CMakeFiles/SyrbuOOP.dir/main.cpp.obj CMakeFiles/SyrbuOOP.dir/TShirt.cpp.obj CMakeFiles/SyrbuOOP.dir/Pants.cpp.obj CMakeFiles/SyrbuOOP.dir/Footwear.cpp.obj CMakeFiles/SyrbuOOP.dir/LongSleeveTShirt.cpp.obj CMakeFiles/SyrbuOOP.dir/Sneackers.cpp.obj CMakeFiles/SyrbuOOP.dir/Breedje.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SyrbuOOP.dir

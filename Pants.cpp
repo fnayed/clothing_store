@@ -57,7 +57,9 @@ Pants Pants::operator+(float value) {// Бінарні оператор "+" (З�
 }
 
 
-Pants::Pants(Pants&& other) noexcept : modelName(std::move(other.modelName)), price(std::move(other.price)) {} // Move constructor (Всередині)
+Pants::Pants(Pants&& other) noexcept : modelName(std::move(other.modelName)), price(std::move(other.price)) { // Move constructor (Всередині)
+    cout<<"Called Pants Move constructor"<<endl;
+}
 
 // Конструктор з параметрами за замовченням (Всередині)
 Pants::Pants(std::string modelName, float price): modelName{string(modelName)}, price{float(price)} {

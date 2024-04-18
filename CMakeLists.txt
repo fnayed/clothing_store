@@ -11,4 +11,10 @@ add_executable(SyrbuOOP
         Pants.h
         Footwear.cpp
         Footwear.h
-        main.cpp)
+        main.cpp
+        LongSleeveTShirt.cpp
+        LongSleeveTShirt.h
+        Sneackers.cpp
+        Sneackers.h
+        Breedje.cpp
+        Breedje.h)

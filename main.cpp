@@ -1,6 +1,9 @@
 #include "TShirt.h"
 #include "Pants.h"
 #include "Footwear.h"
+#include "Sneackers.h"
+#include "LongSleeveTShirt.h"
+#include "Breedje.h"
 #include <iostream>
 
 using namespace std;
@@ -62,8 +65,37 @@ int main() {
 //    cout<<a.get_price()<<endl;
 
     // Приклад використання Перевантажений дружній оператор >>/<<
-    TShirt a;
-    cin>>a;
-    cout<<a;
+//    TShirt a;
+//    cin>>a;
+//    cout<<a;
+
+    // Приклад роботи кода для лаби 4
+
+    //Імплементувати правильну послідовність викликів конструкторів та деструкторів
+//    Sneackers a("Nike", 300, 41.5);
+//    cout<<a.get_foot_size()<<endl;
+
+    //  Правильно імплементувати Copy constructor дочірніх класах.
+//    LongSleeveTShirt a("Nike", 400, "white");
+//    LongSleeveTShirt b(a);
+//    cout<<b.get_modelName()<<endl;
+//    cout<<b.get_price()<<endl;
+//    cout<<b.get_color()<<endl;
+
+    //  Правильно імплементувати Move constructor дочірніх класах.
+//    Breedje a("Nike", 569, 3);
+//    Breedje b(move(a));
+//    cout<<b.get_modelName()<<endl;
+//    cout<<b.get_price()<<endl;
+//    cout<<b.get_numberOfPockets()<<endl;
+
+    //  Правильно імплементувати operator= дочірніх класах.'
+//    Breedje a("Nike", 569, 3);
+//    Breedje b;
+//    b=a;
+//    cout<<b.get_modelName()<<endl;
+//    cout<<b.get_price()<<endl;
+//    cout<<b.get_numberOfPockets()<<endl;
+
     return 0;
 }
