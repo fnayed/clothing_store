@@ -1,0 +1,3 @@
+C:/Users/Endi/Desktop/SyrbuOOP/cmake-build-debug/CMakeFiles/SyrbuOOP.dir
+C:/Users/Endi/Desktop/SyrbuOOP/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Endi/Desktop/SyrbuOOP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
