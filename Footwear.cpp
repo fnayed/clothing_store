@@ -7,20 +7,20 @@
 
 using namespace std;
 
-int Footwear::count = 0; //  static поле
+int Footwear::count = 0;
 
 void Footwear::set_modelName(std::string modelName) {
-    this->modelName = modelName; //приклад використання вказівника this
+    this->modelName = modelName;
 }
 string Footwear::get_modelName()const {
-    return this->modelName; //приклад використання вказівника this
+    return this->modelName;
 }
 
 void Footwear::set_price(float price) {
-    this->price=price; //приклад використання вказівника this
+    this->price=price;
 }
 float Footwear::get_price()const {
-    return this->price; //приклад використання вказівника this
+    return this->price;
 }
 
 int Footwear::get_the_number_of_class_objects() const {
@@ -29,20 +29,39 @@ int Footwear::get_the_number_of_class_objects() const {
 
 
 
-// Делегований конструктор (Всередині) -->
+
+
+void Footwear::display() const {
+    cout << "Model Name: " << modelName << endl;
+    cout << "Price: " << price << endl;
+}
+
+void Footwear::doSomething() const {
+    cout<<"class: Footwear, function do something"<<endl;
+}
+
+void Footwear::print(std::ostream &os) const {
+    cout << "Model Name: " << modelName << endl;
+    cout << "Price: " << price << endl;
+}
+
+
+
+
+
 Footwear::Footwear(std::string modelName, float price): modelName{string(modelName)}, price{float(price)} {
     cout<<"Called Footwear constructor"<<endl;
-    count++; //  Використати модифікатор static із полем та методом класу.
+    count++;
 }
 
 Footwear::Footwear(std::string modelName): Footwear(string(modelName), 0) {}
 
 Footwear::Footwear(): Footwear("None") {}
-// <---
 
 
-// Деструктор (Всередині)
+
+
 Footwear::~Footwear() {
     cout<<"Called Footwear destructor"<<endl;
-    count--; //  Використати модифікатор static із полем та методом класу.
+    count--;
 }
