@@ -15,11 +15,33 @@ int Breedje::get_numberOfPockets() const {
     return this->numberOfPockets;
 }
 
-Breedje::Breedje(Breedje &&other) noexcept: Pants(move(other)), numberOfPockets(move(other.numberOfPockets)) {// Унаслідований Move constructor (Всередині)
+
+
+
+void Breedje::display() const {
+    cout << "Model Name: " << Pants::get_modelName() << endl;
+    cout << "Price: " << Pants::get_price() << endl;
+    cout << "Number of pockets: " << numberOfPockets << endl;
+}
+
+void Breedje::doSomething() const {
+    cout<<"class: Breedje, function do something"<<endl;
+}
+
+void Breedje::print(std::ostream &os) const {
+    Pants::print(os);
+    cout << "Number of pockets: " << numberOfPockets << endl;
+}
+
+
+
+
+
+Breedje::Breedje(Breedje &&other) noexcept: Pants(move(other)), numberOfPockets(move(other.numberOfPockets)) {
     cout<<"Called Breedje Move constructor"<<endl;
 }
 
-Breedje &Breedje::operator=(const Breedje &other) { // Унаслідований operator= (Всередині)
+Breedje &Breedje::operator=(const Breedje &other) {
     if (this != &other) {
         Pants::operator=(other);
         numberOfPockets = other.numberOfPockets;

@@ -8,19 +8,25 @@
 #include <iostream>
 
 using namespace std;
-class Breedje: public Pants{ // Наслідуємо батьківський клас Pants (наслідування типу public)
+class Breedje: public Pants{
 private:
     int numberOfPockets;
 public:
     void set_numberOfPockets(int numberOfPockets);
     int get_numberOfPockets()const;
 
-    Breedje(Breedje&& other)noexcept; // Унаслідований Move constructor (Оболочка)
+    void display()const override;//Унаслідкова Перша Віртуальна функція display
 
-    Breedje& operator=(const Breedje& other); // Унаслідований operator= (Оболочка)
+    void doSomething()const override;//Унаслідкова Друга Віртуальна функція doSomething
+
+    void print(ostream &os) const override; // Унаслідкована функія з Pants
+
+    Breedje(Breedje&& other)noexcept;
+
+    Breedje& operator=(const Breedje& other);
 
     Breedje(string modelName="None", float price=0, int numberOfPockets = 0);
-    ~Breedje();
+    virtual ~Breedje();// virtual деструктор
 };
 
 
