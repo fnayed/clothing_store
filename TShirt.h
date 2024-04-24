@@ -5,33 +5,35 @@
 #ifndef SYRBUOOP_FURNITURES_H
 #define SYRBUOOP_FURNITURES_H
 #include <iostream>
+#include "Printable.h"
 
 using namespace std;
 
-class TShirt {
-private: // Приватний модифікатор доступу (Коли працюєш в main його поля не доступні)
-    string modelName; // Поле
-    float price; // Поле
+class TShirt: public Printable{
+private:
+    string modelName;
+    float price;
 
-public: // Публічний модифікатор доступу (Коли працюєш в main його поля доступні)
+public:
     void set_modelName(string modelName);
-    string get_modelName()const; //Використати модифікатор const
+    string get_modelName()const;
     void set_price(float price);
-    float get_price()const; //Використати модифікатор const
+    float get_price()const;
+
+    virtual void display()const;//Віртуальна функція display
+
+    void doSomething()const; // Перевантажена функція
+
+    virtual void print(ostream &os) const override; // Унаслідкована функія з інтерфейса
+
+    TShirt(const TShirt& other);
 
 
-    friend std::ostream& operator<<(std::ostream& os, const TShirt& obj); // Перевантажений дружній оператор <<
-    friend std::istream& operator>>(std::istream& is, TShirt& obj);// Перевантажений дружній оператор >>
-
-    TShirt(const TShirt& other); // Copy constructor (Оболочка)
-
-    // Перегружений конструктор (Оболочка) -->
     TShirt();
     TShirt(string modelName);
     TShirt(string modelName, float price);
-    // <---
 
-    ~TShirt(); // Деструктор (Оболочка)
+    virtual ~TShirt();// virtual деструктор
 };
 
 
