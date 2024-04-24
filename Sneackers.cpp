@@ -15,6 +15,23 @@ float Sneackers::get_foot_size() const {
     return this->foot_size;
 }
 
+
+
+
+void Sneackers::display() const {
+    cout << "Model Name: " << Footwear::get_modelName() << endl;
+    cout << "Price: " << Footwear::get_price() << endl;
+    cout << "Foot size: " << foot_size << endl;
+}
+
+void Sneackers::print(std::ostream &os) const {
+    Footwear::print(os);
+    cout << "Foot size: " << foot_size << endl;
+}
+
+
+
+
 Sneackers::Sneackers(std::string modelName, float price,float foot_size):
         Footwear(string(modelName), float(price)), foot_size{float(foot_size)}{
     cout<<"Called Sneackers constructor"<<endl;
