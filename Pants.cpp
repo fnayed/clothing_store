@@ -8,21 +8,43 @@
 using namespace std;
 
 void Pants::set_modelName(std::string modelName) {
-    this->modelName = modelName; //приклад використання вказівника this
+    this->modelName = modelName;
 }
 string Pants::get_modelName()const {
-    return this->modelName; //приклад використання вказівника this
+    return this->modelName;
 }
 
 void Pants::set_price(float price) {
-    this->price=price; //приклад використання вказівника this
+    this->price=price;
 }
 float Pants::get_price()const {
-    return this->price; //приклад використання вказівника this
+    return this->price;
 }
 
 
-Pants& Pants::operator=(const Pants& other) {// Оператор присвоєння =
+
+
+
+void Pants::display() const {
+    cout << "Model Name: " << modelName << endl;
+    cout << "Price: " << price << endl;
+}
+
+void Pants::doSomething() const {
+    cout<<"class: Pants, function do something"<<endl;
+}
+
+void Pants::print(std::ostream &os) const {
+    cout << "Model Name: " << modelName << endl;
+    cout << "Price: " << price << endl;
+}
+
+
+
+
+
+
+Pants& Pants::operator=(const Pants& other) {
     if (this != &other) {
         modelName = other.modelName;
         price = other.price;
@@ -30,7 +52,7 @@ Pants& Pants::operator=(const Pants& other) {// Оператор присвоє�
     return *this;
 }
 
-Pants& Pants::operator--(){// Унарний оператор "--" (зменшити ціну)
+Pants& Pants::operator--(){
     if(price<=100){
         price=0;
     }
@@ -39,12 +61,12 @@ Pants& Pants::operator--(){// Унарний оператор "--" (зменши
     return *this;
 }
 
-Pants& Pants::operator++() {// Унарний оператор "++" (Збільшити ціну)
+Pants& Pants::operator++() {
     price+=100;
     return *this;
 }
 
-Pants Pants::operator-(float value){// Бінарні оператор "-" (зменшити ціну)
+Pants Pants::operator-(float value){
     if(price<=value){
         return Pants(modelName, 0);
     }
@@ -52,22 +74,22 @@ Pants Pants::operator-(float value){// Бінарні оператор "-" (зм
         return Pants(modelName, price - value);}
 }
 
-Pants Pants::operator+(float value) {// Бінарні оператор "+" (Збільшити ціну)
+Pants Pants::operator+(float value) {
     return Pants(modelName, price + value);
 }
 
 
-Pants::Pants(Pants&& other) noexcept : modelName(std::move(other.modelName)), price(std::move(other.price)) { // Move constructor (Всередині)
+Pants::Pants(Pants&& other) noexcept : modelName(std::move(other.modelName)), price(std::move(other.price)) {
     cout<<"Called Pants Move constructor"<<endl;
 }
 
-// Конструктор з параметрами за замовченням (Всередині)
+
 Pants::Pants(std::string modelName, float price): modelName{string(modelName)}, price{float(price)} {
     cout<<"Called Pants constructor"<<endl;
 }
 
 
-// Деструктор (Всередині)
+
 Pants::~Pants() {
     cout<<"Called Pants destructor"<<endl;
 }

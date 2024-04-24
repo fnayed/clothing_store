@@ -5,31 +5,38 @@
 #ifndef SYRBUOOP_PANTS_H
 #define SYRBUOOP_PANTS_H
 #include <iostream>
+#include "Printable.h"
 
 using namespace std;
-class Pants {
+class Pants: public Printable{
 private:
     string modelName;
     float price;
 public:
     void set_modelName(string modelName);
-    string get_modelName()const; //Використати модифікатор const
+    string get_modelName()const;
     void set_price(float price);
-    float get_price()const; //Використати модифікатор const
+    float get_price()const;
 
-    Pants& operator=(const Pants& other); // Оператор присвоєння
+    virtual void display()const;//Перша Віртуальна функція display
 
-    Pants& operator--(); // Унарний оператор "--" (зменшити ціну)
-    Pants& operator++();// Унарний оператор "++" (Збільшити ціну)
+    virtual void doSomething()const;//Друга Віртуальна функція doSomething
 
-    Pants operator-(float value); // Бінарні оператор "-" (зменшити ціну)
-    Pants operator+(float value);// Бінарні оператор "+" (Збільшити ціну)
+    virtual void print(ostream &os) const override; // Унаслідкована функія з інтерфейса
 
-    Pants(Pants&& other) noexcept; // Move constructor (Обложка)
+    Pants& operator=(const Pants& other);
 
-    Pants(string modelName = "None", float price = 0);// Конструктор з параметрами за замовченням (Оболочка)
+    Pants& operator--();
+    Pants& operator++();
 
-    ~Pants();// Деструктор (Оболочка)
+    Pants operator-(float value);
+    Pants operator+(float value);
+
+    Pants(Pants&& other) noexcept;
+
+    Pants(string modelName = "None", float price = 0);
+
+   virtual ~Pants();// virtual деструктор
 };
 
 
