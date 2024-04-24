@@ -8,17 +8,23 @@
 #include <iostream>
 
 using namespace std;
-class LongSleeveTShirt: public TShirt {// Наслідуємо батьківський клас TShirt (наслідування типу public)
+class LongSleeveTShirt: public TShirt {
 private:
     string color;
 public:
     void set_color(string color);
     string get_color()const;
 
-    LongSleeveTShirt(const LongSleeveTShirt& other); // Унаслідований Copy constructor (Оболочка)
+    LongSleeveTShirt(const LongSleeveTShirt& other);
+
+    void display()const override; // Унаслідкована віртуальна функція display
+
+    void doSomething()const; // Перегружена функція doSomathing
+
+    void print(ostream &os) const override; // Унаслідкована функія з TShirt
 
     LongSleeveTShirt(string modelName="None", float price=0, string color="None");
-    ~LongSleeveTShirt();
+    virtual ~LongSleeveTShirt();// virtual деструктор
 };
 
 

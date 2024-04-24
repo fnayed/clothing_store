@@ -15,9 +15,31 @@ string LongSleeveTShirt::get_color() const {
     return this->color;
 }
 
-LongSleeveTShirt::LongSleeveTShirt(const LongSleeveTShirt &other): TShirt(other), color(other.color) {// Унаслідований Copy constructor (Всередині)
+LongSleeveTShirt::LongSleeveTShirt(const LongSleeveTShirt &other): TShirt(other), color(other.color) {
     cout<<"Called LongSleeveTShirt Copy constructor"<<endl;
 }
+
+
+
+
+
+
+void LongSleeveTShirt::display() const {
+    cout << "Model Name: " << TShirt::get_modelName() << endl;
+    cout << "Price: " << TShirt::get_price() << endl;
+    cout << "Color: " << color << endl;
+}
+
+void LongSleeveTShirt::doSomething() const {
+    cout<<"class: LongSleeveTShirt, function do something"<<endl;
+}
+
+void LongSleeveTShirt::print(std::ostream &os) const {
+    TShirt::print(os);
+    cout << "Color: " << color << endl;
+}
+
+
 
 
 
